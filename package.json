@@ -9,6 +9,7 @@
   "author": "Aldrin",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "mysql2": "^3.9.3",
     "pg": "^8.11.5",

@@ -1,56 +1,22 @@
 import { v4 } from "uuid";
 //const { request, response } = require("./app");
-import * as Yup from 'yup';
-import User from '../models/User';
-
-class UserController {
-  async store(request, response) {
-    const schema = Yup.object({
-      name: Yup.string().required(),
-      email: Yup.string().email().required(),
-      password_hash: Yup.string().min(6),
-      admin: Yup.boolean(),
-
-    });
-    //   const isValid = await schema.isValid(request.body);//eh uma promisse (i promisse ja pensou em se casar ham rrsrsrsrs)
-    //   console.log(isValid)
-    //  if(!isValid){
-    //    return response
-    //    .status(400)
-    //    .json({error:'Dados estao incorretos' });
-    //   }
-    try {
-      schema.validateSync(request.body, { abortEarly: false })
-    } catch (err) {
-      return response.status(400).json({ error: err.errors })
+import User from '../models/User'
+class UserController{
+    async store(request,response){
+        const {name,email,password_hash,admin}= request.body;
+        const user = await User.create({
+            id:v4(),
+            name,
+            email ,
+            password_hash,
+            admin
+          });
+          return response.status(201).json({
+            id:user.id,
+            name,
+            email,
+            admin,
+          });
     }
-
-    const { name, email, password_hash, admin } = request.body;
-    const userExists = await User.findOne({
-       where:{
-        email,
-       },
-    });
-    //se ele retornar vazio eh false {}
-    if(userExists){
-      return response.status(400).json({error:'Usuario ja existe '})
-    }
-
-
-
-    const user = await User.create({
-      id: v4(),
-      name,
-      email,
-      password_hash,
-      admin
-    });
-    return response.status(201).json({
-      id: user.id,
-      name,
-      email,
-      admin,
-    });
-  }
 }
 export default new UserController();
