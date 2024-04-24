@@ -68,3 +68,6 @@ module.exports = {
      
   },
 };
+yarn add uuid     
+
+yarn add yup para estrutrar as classes
