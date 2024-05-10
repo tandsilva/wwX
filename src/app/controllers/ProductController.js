@@ -28,6 +28,13 @@ class ProductController{
        // console.log(file)
           return response.status(201).json({product})
         }
+
+        async index(request,response){
+            const products = await Product.findAll();
+
+            return response.json(products)
+        }
+
     }
 
     export default new ProductController();
