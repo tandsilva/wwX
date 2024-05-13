@@ -129,3 +129,5 @@ module.exports = {
 
 
 yarn add multer
+
+Chave secreta loginUser : HAHAHAHAHAHAH
