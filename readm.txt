@@ -129,5 +129,5 @@ module.exports = {
 
 
 yarn add multer
-
+https://www.md5hashgenerator.com/
 Chave secreta loginUser : HAHAHAHAHAHAH
