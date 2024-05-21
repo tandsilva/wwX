@@ -1,4 +1,4 @@
-# Projeto de Criptomoedas Full Stack
+# Projeto de Criptomoedas Back End
 
 Este é um projeto Full Stack de criptomoedas. Ele inclui a configuração de um backend utilizando Node.js, autenticação com JSON Web Token (JWT), tratamento de imagens e validação de email e senha.
 
@@ -43,7 +43,7 @@ Este é um projeto Full Stack de criptomoedas. Ele inclui a configuração de um
    npm start
    ```
 
-2. Acesse o projeto em seu navegador em `http://localhost:3000`.
+2. Acesse o projeto em seu navegador em `http://localhost:3001`.
 
 ## Funcionalidades
 
