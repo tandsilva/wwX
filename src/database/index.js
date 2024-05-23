@@ -2,8 +2,10 @@ import  Sequelize  from 'sequelize';
 import configDataBase from '../config/database'
 import User from "../app/models/User";
 import Product from '../app/models/Product';
-const models =[User,Product];//para mapear 
+import Category from '../app/models/Category';
+const models =[User,Product,Category];//para mapear 
 //toda vez que ultiizar uma model nao precisara ser feita nova conexao
+//toda vez que criar uma model precisa ser ajustado o index
 class Database{
     constructor(){
         this.init();
