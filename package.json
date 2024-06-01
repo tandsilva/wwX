@@ -7,7 +7,8 @@
     "dev": "nodemon"
   },
   "author": "Aldrin",
-  "license": "ISC",
+  "license": "MIT",
+
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
